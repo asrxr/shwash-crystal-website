@@ -31,3 +31,26 @@ HOW TO CHANGE THINGS
 THE PHONE NUMBER
   The landline reads 02-9354734, taken from a business card that was partly
   smudged. Please check it before sharing the site widely.
+
+STILL TO FILL IN (search index.html for "[confirm")
+  The new chandelier (SCL-C1 to C5) and wall light (SCL-W1 to W6) entries
+  in "var P = [" have their wattage, size and price written as
+  "[confirm with showroom]" in English and "[শোরুমে জিজ্ঞাসা করুন]" in
+  Bangla, because that detail was not available when they were written.
+  Search the file for "confirm" to find every spot and replace it with the
+  real number once you have it.
+
+  The price line just under the collection filters (search for "cprice")
+  lists a starting price per category, currently all "৳[confirm]". Same
+  idea, replace with real numbers when ready.
+
+  Installation terms (search for "i7a") currently just say "Ask in the
+  showroom or on WhatsApp" because the exact policy was not settled yet.
+
+IF YOU GET A CUSTOM DOMAIN
+  Near the top of index.html, in the <head>, there are a few lines
+  starting "og:image" and "twitter:image" pointing at "images/hero.webp".
+  Once the site has a permanent web address (e.g. shwashcrystal.com),
+  change that to the full address, like
+  "https://shwashcrystal.com/images/hero.webp", so link previews on
+  WhatsApp and Facebook can find the picture.
