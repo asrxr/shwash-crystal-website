@@ -167,6 +167,7 @@ input[type=range].dim::-moz-range-thumb{width:30px; height:30px; border-radius:5
 
 /* ---------- collection ---------- */
 .filters{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:18px}
+.price-legend{font-size:.82rem; max-width:none; color:rgba(51,36,26,.62); margin:-6px 0 20px; font-style:italic}
 .chip{padding:8px 15px; border-radius:99px; border:1px solid rgba(51,36,26,.24); font-size:.78rem;
   font-weight:600; color:var(--ink); transition:.22s var(--ease); white-space:nowrap}
 .chip:hover{border-color:var(--espresso); background:rgba(51,36,26,.05)}
@@ -355,11 +356,14 @@ input[type=range].dim::-moz-range-thumb{width:30px; height:30px; border-radius:5
       </div>
       <div class="filters" id="filters" role="group" aria-label="Filter fixtures">
         <button class="chip" data-f="all" aria-pressed="true" data-i18n="fil1">Everything</button>
+        <button class="chip" data-f="chandelier" aria-pressed="false" data-i18n="fil6">Chandeliers</button>
+        <button class="chip" data-f="wall" aria-pressed="false" data-i18n="fil7">Wall lights</button>
         <button class="chip" data-f="pendant" aria-pressed="false" data-i18n="fil2">Pendants</button>
         <button class="chip" data-f="linear" aria-pressed="false" data-i18n="fil3">Linear and profile</button>
         <button class="chip" data-f="glass" aria-pressed="false" data-i18n="fil4">Glass</button>
         <button class="chip" data-f="statement" aria-pressed="false" data-i18n="fil5">Statement</button>
       </div>
+      <p class="prose price-legend" id="priceLegend" data-i18n="cprice">Approximate starting prices, to confirm: chandeliers ৳[confirm] · wall lights ৳[confirm] · pendants ৳[confirm] · linear ৳[confirm] · glass ৳[confirm] · statement ৳[confirm]. Exact pricing on enquiry.</p>
       <div class="grid" id="grid"></div>
     </div>
   </section>
@@ -506,6 +510,8 @@ en:{
  ch2:"The 2026 collection",
  cp:"Every fixture below is in the showroom and switched on. Tap one for wattage, dimensions and the finishes we stock.",
  fil1:"Everything", fil2:"Pendants", fil3:"Linear and profile", fil4:"Glass", fil5:"Statement",
+ fil6:"Chandeliers", fil7:"Wall lights",
+ cprice:"Approximate starting prices, to confirm: chandeliers ৳[confirm] · wall lights ৳[confirm] · pendants ৳[confirm] · linear ৳[confirm] · glass ৳[confirm] · statement ৳[confirm]. Exact pricing on enquiry.",
  cardcta:"View specifications",
  rh2:"Where our lights end up",
  rp:"Homes in Dhanmondi and Gulshan, chambers, classrooms, cafés and clinics, all from the same catalogue, specified differently.",
@@ -556,6 +562,8 @@ bn:{
  ch2:"২০২৬ কালেকশন",
  cp:"নিচের প্রতিটি ফিক্সচার শোরুমে আছে এবং জ্বালানো অবস্থায় দেখা যায়। ওয়াট, মাপ আর যেসব ফিনিশ আমাদের কাছে আছে দেখতে যেকোনো একটিতে ট্যাপ করুন।",
  fil1:"সবকিছু", fil2:"পেন্ডেন্ট", fil3:"লিনিয়ার ও প্রোফাইল", fil4:"কাচ", fil5:"স্টেটমেন্ট",
+ fil6:"শ্যান্ডেলিয়ার", fil7:"ওয়াল লাইট",
+ cprice:"আনুমানিক শুরুর দাম, নিশ্চিত করা হবে: শ্যান্ডেলিয়ার ৳[শীঘ্রই] · ওয়াল লাইট ৳[শীঘ্রই] · পেন্ডেন্ট ৳[শীঘ্রই] · লিনিয়ার ৳[শীঘ্রই] · কাচ ৳[শীঘ্রই] · স্টেটমেন্ট ৳[শীঘ্রই]। সঠিক দাম জানতে যোগাযোগ করুন।",
  cardcta:"স্পেসিফিকেশন দেখুন",
  rh2:"আমাদের আলো যেখানে গিয়ে দাঁড়ায়",
  rp:"ধানমন্ডি আর গুলশানের বাড়ি, চেম্বার, ক্লাসরুম, ক্যাফে আর ক্লিনিক। সবই একই ক্যাটালগ থেকে, শুধু বেছে নেওয়াটা আলাদা।",
@@ -702,7 +710,128 @@ var P=[
   t:'300 to 406 mm wide · 5 finishes', tb:'৩০০ থেকে ৪০৬ মিমি চওড়া · ৫টি ফিনিশ',
   s:[['Sizes','মাপ','300 mm wide by 650 mm, and 406 mm wide by 60 mm','৩০০ মিমি চওড়া ও ৬৫০ মিমি, এবং ৪০৬ মিমি চওড়া ও ৬০ মিমি'],
      ['Material','উপকরণ','Metal with glass detail','ধাতু, সঙ্গে কাচের কাজ']],
-  sw:['BK','WH','YE','GR','RE']}
+  sw:['BK','WH','YE','GR','RE']},
+
+ {c:'chandelier', code:'SCL-C1', img:'images/p-chand-drum.webp', wide:true,
+  n:'Cascade crystal drum chandelier', nb:'ক্যাসকেড ক্রিস্টাল ড্রাম শ্যান্ডেলিয়ার',
+  d:"The signature piece of the range. A wide drum crowned in scalloped crystal panels, dropping into hundreds of faceted crystal drops that catch the light from every angle. Built for a double height entrance, a formal dining room or anywhere the ceiling deserves the first word.",
+  db:"এই রেঞ্জের প্রধান ফিক্সচার। স্ক্যালপড কাটা ক্রিস্টাল প্যানেলে মোড়া চওড়া ড্রাম আকৃতি, যার নিচে শত শত কাটা ক্রিস্টাল ড্রপ সব দিক থেকে আলো প্রতিফলিত করে। উঁচু সিলিংয়ের প্রবেশপথ, আনুষ্ঠানিক ডাইনিং রুম, অথবা যেখানে সিলিংটাই প্রথমে চোখে পড়া উচিত, সেখানকার জন্য তৈরি।",
+  t:'Statement chandelier · multi-tier crystal · size and wattage to confirm', tb:'স্টেটমেন্ট শ্যান্ডেলিয়ার · মাল্টি-টিয়ার ক্রিস্টাল · মাপ ও ওয়াট শীঘ্রই জানানো হবে',
+  s:[['Style','ধরন','Multi-tier crystal drum, LED integrated','মাল্টি-টিয়ার ক্রিস্টাল ড্রাম, এলইডি সংযুক্ত'],
+     ['Material','উপকরণ','Crystal glass and gold-finish metal frame','ক্রিস্টাল গ্লাস ও গোল্ড ফিনিশ মেটাল ফ্রেম'],
+     ['Power','পাওয়ার','[confirm with showroom]','[শোরুমে জিজ্ঞাসা করুন]'],
+     ['Size','মাপ','[confirm with showroom]','[শোরুমে জিজ্ঞাসা করুন]']],
+  sw:['GD','PB','CLR']},
+
+ {c:'chandelier', code:'SCL-C2', img:'images/p-chand-classic.webp',
+  n:'Six-arm brass candle chandelier', nb:'ছয় বাহুর ব্রাস ক্যান্ডেল শ্যান্ডেলিয়ার',
+  d:"A traditional silhouette in aged brass, six candle-style arms carrying fluted glass shades around a central column. Reads as heirloom rather than trend, suited to a formal living room, a hotel lobby or a stairwell with real height.",
+  db:"পুরনো ধাঁচের ব্রাস ফিনিশে গড়া, কেন্দ্রীয় কলামের চারপাশে ছয়টি ক্যান্ডেল-স্টাইল বাহুতে ফ্লুটেড গ্লাস শেড। ট্রেন্ডের চেয়ে বংশ পরম্পরায় চলে আসা ঐতিহ্যের মতো দেখতে, আনুষ্ঠানিক বসার ঘর, হোটেল লবি বা উঁচু সিঁড়িঘরের জন্য উপযুক্ত।",
+  t:'6-arm classic chandelier · brass finish · size and wattage to confirm', tb:'৬ বাহুর ক্লাসিক শ্যান্ডেলিয়ার · ব্রাস ফিনিশ · মাপ ও ওয়াট শীঘ্রই জানানো হবে',
+  s:[['Style','ধরন','6-arm candle style, fluted glass shades','৬ বাহুর ক্যান্ডেল স্টাইল, ফ্লুটেড গ্লাস শেড'],
+     ['Material','উপকরণ','Brass-finish metal and glass','ব্রাস ফিনিশ মেটাল ও গ্লাস'],
+     ['Power','পাওয়ার','[confirm with showroom]','[শোরুমে জিজ্ঞাসা করুন]'],
+     ['Size','মাপ','[confirm with showroom]','[শোরুমে জিজ্ঞাসা করুন]']],
+  sw:['GD','PB']},
+
+ {c:'chandelier', code:'SCL-C3', img:'images/p-chand-flower.webp',
+  n:'Crystal flower sputnik chandelier', nb:'ক্রিস্টাল ফ্লাওয়ার স্পুটনিক শ্যান্ডেলিয়ার',
+  d:"Faceted crystal petals cluster into flowers around a compact gold frame, closer to jewellery than a fixture. Hung low over a round table or in a small foyer it throws prismed light across the ceiling as well as down.",
+  db:"কাটা ক্রিস্টাল পাপড়িগুলো ছোট্ট গোল্ড ফ্রেমের চারপাশে ফুল হয়ে ফুটে ওঠে, ফিক্সচারের চেয়ে গয়নার মতো দেখতে বেশি। গোল টেবিলের উপরে নিচু করে অথবা ছোট ফয়ারে ঝোলালে সিলিং জুড়ে এবং নিচেও প্রিজমের মতো আলো ছড়ায়।",
+  t:'Crystal flower chandelier · compact · size and wattage to confirm', tb:'ক্রিস্টাল ফ্লাওয়ার শ্যান্ডেলিয়ার · কমপ্যাক্ট · মাপ ও ওয়াট শীঘ্রই জানানো হবে',
+  s:[['Style','ধরন','Sputnik-style, faceted crystal petals','স্পুটনিক-স্টাইল, কাটা ক্রিস্টাল পাপড়ি'],
+     ['Material','উপকরণ','Crystal and gold-finish metal','ক্রিস্টাল ও গোল্ড ফিনিশ মেটাল'],
+     ['Power','পাওয়ার','[confirm with showroom]','[শোরুমে জিজ্ঞাসা করুন]'],
+     ['Size','মাপ','[confirm with showroom]','[শোরুমে জিজ্ঞাসা করুন]']],
+  sw:['GD','CLR']},
+
+ {c:'chandelier', code:'SCL-C4', img:'images/p-chand-tiered.webp',
+  n:'Amber crystal tiered chandelier', nb:'অ্যাম্বার ক্রিস্টাল টিয়ার্ড শ্যান্ডেলিয়ার',
+  d:"Rows of amber tinted crystal shells build outward from a wide crown, each tier catching a different warmth of light. The scale and colour make it a centrepiece for a double volume space rather than a standard ceiling height room.",
+  db:"চওড়া ক্রাউন থেকে সারি সারি অ্যাম্বার টিন্টেড ক্রিস্টাল শেল বাইরের দিকে ছড়িয়ে থাকে, প্রতিটি স্তর আলাদা উষ্ণতায় আলো ধরে রাখে। এর আকার ও রং একে সাধারণ সিলিং উচ্চতার ঘরের বদলে ডাবল ভলিউম জায়গার কেন্দ্রবিন্দু বানিয়ে তোলে।",
+  t:'Large tiered chandelier · amber crystal · size and wattage to confirm', tb:'বড় টিয়ার্ড শ্যান্ডেলিয়ার · অ্যাম্বার ক্রিস্টাল · মাপ ও ওয়াট শীঘ্রই জানানো হবে',
+  s:[['Style','ধরন','Multi-tier, amber crystal shells','মাল্টি-টিয়ার, অ্যাম্বার ক্রিস্টাল শেল'],
+     ['Material','উপকরণ','Crystal glass and gold-finish metal','ক্রিস্টাল গ্লাস ও গোল্ড ফিনিশ মেটাল'],
+     ['Power','পাওয়ার','[confirm with showroom]','[শোরুমে জিজ্ঞাসা করুন]'],
+     ['Size','মাপ','[confirm with showroom]','[শোরুমে জিজ্ঞাসা করুন]']],
+  sw:['AMB','GD']},
+
+ {c:'chandelier', code:'SCL-C5', img:'images/p-chand-candle.webp',
+  n:'Five-arm gold candle chandelier', nb:'পাঁচ বাহুর গোল্ড ক্যান্ডেল শ্যান্ডেলিয়ার',
+  d:"A compact classic in warm gold, five scrolled arms with frosted candle covers and cut crystal drops. Scaled for a dining table or bedroom rather than a grand hall, and the easiest of the chandeliers to place in an ordinary room.",
+  db:"উষ্ণ গোল্ড রঙে তৈরি একটি কমপ্যাক্ট ক্লাসিক নকশা, পাঁচটি কার্ভড বাহুতে ফ্রস্টেড ক্যান্ডেল কভার আর কাটা ক্রিস্টাল ড্রপ। বড় হলঘরের বদলে ডাইনিং টেবিল বা বেডরুমের উপযোগী মাপে তৈরি, সাধারণ ঘরে বসানোর জন্য শ্যান্ডেলিয়ারগুলোর মধ্যে সবচেয়ে সহজ।",
+  t:'5-arm chandelier · gold finish · size and wattage to confirm', tb:'৫ বাহুর শ্যান্ডেলিয়ার · গোল্ড ফিনিশ · মাপ ও ওয়াট শীঘ্রই জানানো হবে',
+  s:[['Style','ধরন','5-arm candle style, crystal drops','৫ বাহুর ক্যান্ডেল স্টাইল, ক্রিস্টাল ড্রপ'],
+     ['Material','উপকরণ','Gold-finish metal and crystal','গোল্ড ফিনিশ মেটাল ও ক্রিস্টাল'],
+     ['Power','পাওয়ার','[confirm with showroom]','[শোরুমে জিজ্ঞাসা করুন]'],
+     ['Size','মাপ','[confirm with showroom]','[শোরুমে জিজ্ঞাসা করুন]']],
+  sw:['GD']},
+
+ {c:'wall', code:'SCL-W1', img:'images/p-wall-drum.webp',
+  n:'Crystal drum wall light', nb:'ক্রিস্টাল ড্রাম ওয়াল লাইট',
+  d:"A miniature version of the drum chandelier, built to sit flush against a wall. Two rings of light frame a column of faceted crystal drops, suited to flanking a mirror or a headboard in pairs.",
+  db:"ড্রাম শ্যান্ডেলিয়ারের ছোট সংস্করণ, দেয়ালের গায়ে বসানোর জন্য তৈরি। দুটি আলোর রিং কাটা ক্রিস্টাল ড্রপের একটি সারিকে ঘিরে রাখে, আয়না বা বিছানার হেডবোর্ডের দুই পাশে জোড়ায় বসানোর উপযোগী।",
+  t:'Crystal drum wall light · pair recommended · size and wattage to confirm', tb:'ক্রিস্টাল ড্রাম ওয়াল লাইট · জোড়ায় বসানো ভালো · মাপ ও ওয়াট শীঘ্রই জানানো হবে',
+  s:[['Style','ধরন','Wall-mounted, tiered crystal drum','দেয়াল-মাউন্টেড, টিয়ার্ড ক্রিস্টাল ড্রাম'],
+     ['Material','উপকরণ','Crystal glass, gold-finish metal','ক্রিস্টাল গ্লাস, গোল্ড ফিনিশ মেটাল'],
+     ['Power','পাওয়ার','[confirm with showroom]','[শোরুমে জিজ্ঞাসা করুন]'],
+     ['Size','মাপ','[confirm with showroom]','[শোরুমে জিজ্ঞাসা করুন]']],
+  sw:['GD','PB']},
+
+ {c:'wall', code:'SCL-W2', img:'images/p-wall-icicle.webp',
+  n:'Crystal icicle wall light', nb:'ক্রিস্টাল আইসিকল ওয়াল লাইট',
+  d:"A brushed gold drum edged in cut crystal, with long icicle drops hanging below the light ring. More jewellery than fitting, it works best where it will be seen close up, a hallway, a powder room, either side of a console.",
+  db:"ব্রাশড গোল্ড ড্রামের কিনারায় কাটা ক্রিস্টাল, আলোর রিংয়ের নিচে ঝুলছে লম্বা আইসিকল-আকৃতির ড্রপ। ফিটিংয়ের চেয়ে গয়নার মতো বেশি, কাছ থেকে দেখা যাবে এমন জায়গায় সবচেয়ে ভালো মানায়, করিডোর, পাউডার রুম, অথবা কনসোল টেবিলের দুই পাশে।",
+  t:'Crystal icicle wall light · close-up detail · size and wattage to confirm', tb:'ক্রিস্টাল আইসিকল ওয়াল লাইট · কাছ থেকে দেখার নকশা · মাপ ও ওয়াট শীঘ্রই জানানো হবে',
+  s:[['Style','ধরন','Wall-mounted, crystal icicle drops','দেয়াল-মাউন্টেড, ক্রিস্টাল আইসিকল ড্রপ'],
+     ['Material','উপকরণ','Crystal glass, brushed gold metal','ক্রিস্টাল গ্লাস, ব্রাশড গোল্ড মেটাল'],
+     ['Power','পাওয়ার','[confirm with showroom]','[শোরুমে জিজ্ঞাসা করুন]'],
+     ['Size','মাপ','[confirm with showroom]','[শোরুমে জিজ্ঞাসা করুন]']],
+  sw:['GD']},
+
+ {c:'wall', code:'SCL-W3', img:'images/p-wall-triple.webp',
+  n:'Triple globe crystal wall light', nb:'ট্রিপল গ্লোব ক্রিস্টাল ওয়াল লাইট',
+  d:"Three faceted crystal globes stacked on a single brass arm, each one lit from within. The vertical stack makes it read as a single tall fixture rather than three separate lights, good for a narrow wall or a stairwell landing.",
+  db:"একটি ব্রাস বাহুতে তিনটি কাটা ক্রিস্টাল গ্লোব উলম্বভাবে সাজানো, প্রতিটির ভেতর থেকেই আলো জ্বলে। উলম্ব সাজানোর কারণে এটি তিনটি আলাদা লাইট নয়, একটি লম্বা ফিক্সচারের মতো দেখায়, সরু দেয়াল বা সিঁড়ির ল্যান্ডিংয়ের জন্য ভালো।",
+  t:'Triple globe wall light · vertical · size and wattage to confirm', tb:'ট্রিপল গ্লোব ওয়াল লাইট · উলম্ব নকশা · মাপ ও ওয়াট শীঘ্রই জানানো হবে',
+  s:[['Style','ধরন','Wall-mounted, 3 stacked crystal globes','দেয়াল-মাউন্টেড, ৩টি স্ট্যাকড ক্রিস্টাল গ্লোব'],
+     ['Material','উপকরণ','Crystal glass, brass metal','ক্রিস্টাল গ্লাস, ব্রাস মেটাল'],
+     ['Power','পাওয়ার','[confirm with showroom]','[শোরুমে জিজ্ঞাসা করুন]'],
+     ['Size','মাপ','[confirm with showroom]','[শোরুমে জিজ্ঞাসা করুন]']],
+  sw:['GD']},
+
+ {c:'wall', code:'SCL-W4', img:'images/p-wall-fan.webp',
+  n:'Tiered fan-shade wall light', nb:'টিয়ার্ড ফ্যান-শেড ওয়াল লাইট',
+  d:"Six ribbed glass shades stack into a fan from a single wall point, each shade throwing a soft fluted glow. Reads as a piece of lighting sculpture as much as illumination, best on a feature wall with room to stand back from it.",
+  db:"একটি মাত্র দেয়াল পয়েন্ট থেকে ছয়টি খাঁজকাটা গ্লাস শেড পাখার মতো সাজানো, প্রতিটি শেড থেকে নরম, রেখাযুক্ত আলো ছড়ায়। আলোর পাশাপাশি এটিকে একটি ভাস্কর্যের মতোও দেখায়, পেছনে সরে দাঁড়ানোর মতো জায়গাসহ ফিচার ওয়ালের জন্য সবচেয়ে ভালো।",
+  t:'Tiered fan-shade wall light · sculptural · size and wattage to confirm', tb:'টিয়ার্ড ফ্যান-শেড ওয়াল লাইট · ভাস্কর্যধর্মী · মাপ ও ওয়াট শীঘ্রই জানানো হবে',
+  s:[['Style','ধরন','Wall-mounted, 6 tiered ribbed glass shades','দেয়াল-মাউন্টেড, ৬টি টিয়ার্ড খাঁজকাটা গ্লাস শেড'],
+     ['Material','উপকরণ','Ribbed glass, metal mount','খাঁজকাটা গ্লাস, মেটাল মাউন্ট'],
+     ['Power','পাওয়ার','[confirm with showroom]','[শোরুমে জিজ্ঞাসা করুন]'],
+     ['Size','মাপ','[confirm with showroom]','[শোরুমে জিজ্ঞাসা করুন]']],
+  sw:['GD','CLR']},
+
+ {c:'wall', code:'SCL-W5', img:'images/p-wall-flower.webp',
+  n:'Crystal flower cluster wall light', nb:'ক্রিস্টাল ফ্লাওয়ার ক্লাস্টার ওয়াল লাইট',
+  d:"Two clusters of faceted crystal petals sit above and below a slim rose gold stem. The smallest and most delicate piece in the range, suited to a bedroom, a nursery or anywhere the light should feel soft rather than grand.",
+  db:"একটি সরু রোজ গোল্ড স্টেমের উপরে ও নিচে কাটা ক্রিস্টাল পাপড়ির দুটি গুচ্ছ বসানো। রেঞ্জের সবচেয়ে ছোট ও কোমল ফিক্সচার, বেডরুম, শিশুর ঘর, অথবা যেখানে আলোটা জমকালো নয় বরং নরম হওয়া উচিত, সেখানকার জন্য উপযুক্ত।",
+  t:'Crystal flower wall light · delicate scale · size and wattage to confirm', tb:'ক্রিস্টাল ফ্লাওয়ার ওয়াল লাইট · কোমল আকার · মাপ ও ওয়াট শীঘ্রই জানানো হবে',
+  s:[['Style','ধরন','Wall-mounted, crystal flower clusters','দেয়াল-মাউন্টেড, ক্রিস্টাল ফ্লাওয়ার ক্লাস্টার'],
+     ['Material','উপকরণ','Crystal glass, rose gold metal','ক্রিস্টাল গ্লাস, রোজ গোল্ড মেটাল'],
+     ['Power','পাওয়ার','[confirm with showroom]','[শোরুমে জিজ্ঞাসা করুন]'],
+     ['Size','মাপ','[confirm with showroom]','[শোরুমে জিজ্ঞাসা করুন]']],
+  sw:['RG','GD']},
+
+ {c:'wall', code:'SCL-W6', img:'images/p-wall-twin.webp',
+  n:'Twin cone crystal wall light', nb:'টুইন কোন ক্রিস্টাল ওয়াল লাইট',
+  d:"Two textured crystal cone shades on a shared brass plate, angled slightly apart to widen the spread of light. A practical double-headed option where a single wall light will not cover enough of the wall.",
+  db:"একটি ভাগাভাগি ব্রাস প্লেটের উপর দুটি টেক্সচার্ড ক্রিস্টাল কোন শেড, আলোর বিস্তার বাড়াতে সামান্য কোণ করে বসানো। যেখানে একটি ওয়াল লাইট পুরো দেয়াল ঢাকতে পারে না, সেখানকার জন্য কার্যকর ডাবল-হেড অপশন।",
+  t:'Twin cone wall light · wide spread · size and wattage to confirm', tb:'টুইন কোন ওয়াল লাইট · প্রশস্ত আলো · মাপ ও ওয়াট শীঘ্রই জানানো হবে',
+  s:[['Style','ধরন','Wall-mounted, twin crystal cone shades','দেয়াল-মাউন্টেড, টুইন ক্রিস্টাল কোন শেড'],
+     ['Material','উপকরণ','Crystal glass, brass metal','ক্রিস্টাল গ্লাস, ব্রাস মেটাল'],
+     ['Power','পাওয়ার','[confirm with showroom]','[শোরুমে জিজ্ঞাসা করুন]'],
+     ['Size','মাপ','[confirm with showroom]','[শোরুমে জিজ্ঞাসা করুন]']],
+  sw:['GD','PB']}
 ];
 
 var lang='en';
