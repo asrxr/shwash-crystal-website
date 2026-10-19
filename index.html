@@ -4,7 +4,22 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Shwash Crystal Lighting, decorative and architectural lighting in Dhaka</title>
-<meta name="description" content="Shwash Crystal Lighting has been lighting Bangladeshi homes and interiors since the 1970s. Pendants, linear profiles and glass fixtures. Showroom at Suleiman Plaza, Purana Paltan, Dhaka.">
+<meta name="description" content="Shwash Crystal Lighting has been lighting Bangladeshi homes and interiors since the 1970s. Chandeliers, wall lights, pendants, linear profiles and glass fixtures. Showroom at Suleiman Plaza, Purana Paltan, Dhaka.">
+<meta name="theme-color" content="#F7F1E4">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shwash Crystal Lighting">
+<meta property="og:title" content="Shwash Crystal Lighting, decorative and architectural lighting in Dhaka">
+<meta property="og:description" content="Chandeliers, wall lights, pendants, linear profiles and glass fixtures, lit in our Dhaka showroom since the 1970s. Suleiman Plaza, Purana Paltan.">
+<meta property="og:image" content="https://shwashcrystalbd.com/images/hero.webp">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="bn_BD">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Shwash Crystal Lighting">
+<meta name="twitter:description" content="Chandeliers, wall lights, pendants and glass fixtures, lit in our Dhaka showroom since the 1970s.">
+<meta name="twitter:image" content="https://shwashcrystalbd.com/images/hero.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&family=Noto+Sans+Bengali:wght@400;600;700;800&family=Noto+Serif+Bengali:wght@400;500&display=swap" rel="stylesheet">
@@ -224,6 +239,13 @@ input[type=range].dim::-moz-range-thumb{width:30px; height:30px; border-radius:5
 #visit{background:var(--paper-2)}
 .visit-grid{display:grid; grid-template-columns:1fr 1fr; gap:clamp(24px,4vw,54px)}
 @media(max-width:820px){.visit-grid{grid-template-columns:1fr}}
+.map-wrap{margin-top:20px; border-radius:3px; overflow:hidden; aspect-ratio:16/10; border:var(--hair)}
+.map-wrap iframe{width:100%; height:100%; border:0; filter:sepia(8%) saturate(88%)}
+.wa-float{position:fixed; right:20px; bottom:20px; width:56px; height:56px; border-radius:50%; background:#25D366;
+  color:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 20px rgba(0,0,0,.28);
+  z-index:60; transition:transform .2s var(--ease)}
+.wa-float:hover{transform:scale(1.08)}
+@media(max-width:520px){.wa-float{right:14px; bottom:14px; width:50px; height:50px}}
 .info{display:grid; border-top:var(--hair); margin:0}
 .info a,.info div{display:grid; grid-template-columns:120px 1fr; gap:14px; padding:15px 0; border-bottom:var(--hair);
   text-decoration:none; align-items:baseline; transition:padding-left .3s var(--ease)}
@@ -389,6 +411,7 @@ input[type=range].dim::-moz-range-thumb{width:30px; height:30px; border-radius:5
         <p class="prose" data-i18n="vp">Photographs never settle a colour temperature argument. Bring your plan, your tile sample or your paint chip.</p>
       </div>
       <div class="visit-grid">
+        <div>
         <dl class="info">
           <a href="https://maps.google.com/?q=Suleiman+Plaza+162+Shahid+Sayed+Nazrul+Islam+Sarani+Purana+Paltan+Dhaka" target="_blank" rel="noopener">
             <dt data-i18n="i1">Showroom</dt>
@@ -400,8 +423,15 @@ input[type=range].dim::-moz-range-thumb{width:30px; height:30px; border-radius:5
           </a>
           <a href="tel:029354734"><dt data-i18n="i3">Landline</dt><dd>02-9354734</dd></a>
           <a href="mailto:ishratjahan24@gmail.com"><dt data-i18n="i4">Email</dt><dd>ishratjahan24@gmail.com</dd></a>
+          <div><dt data-i18n="i6">Delivery</dt><dd data-i18n="i6a">Inside Dhaka only, for now</dd></div>
+          <div><dt data-i18n="i7">Installation</dt><dd data-i18n="i7a">Ask in the showroom or on WhatsApp</dd></div>
           <div><dt data-i18n="i5">Ask for</dt><dd><span data-i18n="i5a">Israt Jahan Aktar</span><small data-i18n="i5b">Managing Partner</small></dd></div>
         </dl>
+        <div class="map-wrap">
+          <iframe src="https://maps.google.com/maps?q=Suleiman%20Plaza%2C%20162%20Shahid%20Sayed%20Nazrul%20Islam%20Sarani%2C%20Purana%20Paltan%2C%20Dhaka%201000&z=16&output=embed"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Shwash Crystal Lighting showroom location"></iframe>
+        </div>
+        </div>
 
         <form class="form" id="enq">
           <div class="row2">
@@ -445,6 +475,12 @@ input[type=range].dim::-moz-range-thumb{width:30px; height:30px; border-radius:5
     </div>
   </div>
 </footer>
+
+<a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" fill="currentColor">
+    <path d="M16.02 3C9.4 3 4 8.4 4 15.02c0 2.23.6 4.32 1.65 6.12L4 29l8.06-1.62a11.96 11.96 0 0 0 3.96.68C22.6 28.06 28 22.66 28 16.04 28 9.42 22.64 3 16.02 3zm0 21.87c-1.3 0-2.57-.28-3.72-.83l-.27-.13-4.44.9.94-4.33-.17-.28a9.83 9.83 0 0 1-1.5-5.18c0-5.44 4.44-9.87 9.9-9.87 5.44 0 9.86 4.42 9.86 9.87 0 5.45-4.42 9.85-9.6 9.85zm5.4-7.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.04-.17-.3-.02-.46.13-.6.13-.14.3-.35.44-.53.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.5-.17 0-.37-.02-.57-.02s-.52.07-.8.37c-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.75-.71 2-1.4.24-.68.24-1.27.17-1.4-.07-.12-.27-.2-.57-.35z"/>
+  </svg>
+</a>
 
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mtitle">
   <div class="modal-bd" data-close></div>
@@ -501,6 +537,7 @@ en:{
  i1:"Showroom", i1a:"Suleiman Plaza, Shop 162",
  i1b:"3/3 B Purana Paltan, Shahid Sayed Nazrul Islam Sarani Road, Dhaka 1000. Open in Maps.",
  i2:"Mobile", i2b:"Call or WhatsApp", i3:"Landline", i4:"Email",
+ i6:"Delivery", i6a:"Inside Dhaka only, for now", i7:"Installation", i7a:"Ask in the showroom or on WhatsApp",
  i5:"Ask for", i5a:"Israt Jahan Aktar", i5b:"Managing Partner",
  fm1:"Your name", fm2:"Phone", fm2p:"01XXXXXXXXX", fm3:"What are you lighting?",
  o1:"A home", o2:"A single room", o3:"An office or studio", o4:"A café or restaurant",
@@ -547,6 +584,7 @@ bn:{
  i1:"শোরুম", i1a:"সুলেমান প্লাজা, দোকান ১৬২",
  i1b:"৩/৩ বি পুরানা পল্টন, শহীদ সৈয়দ নজরুল ইসলাম সরণি, ঢাকা ১০০০। ম্যাপে দেখুন।",
  i2:"মোবাইল", i2b:"কল বা হোয়াটসঅ্যাপ", i3:"ল্যান্ডলাইন", i4:"ইমেইল",
+ i6:"ডেলিভারি", i6a:"এখন শুধু ঢাকার ভেতরে", i7:"ইনস্টলেশন", i7a:"শোরুমে বা হোয়াটসঅ্যাপে জিজ্ঞাসা করুন",
  i5:"যোগাযোগ করুন", i5a:"ইসরাত জাহান আক্তার", i5b:"ম্যানেজিং পার্টনার",
  fm1:"আপনার নাম", fm2:"ফোন", fm2p:"০১XXXXXXXXX", fm3:"কী আলোকিত করতে চান?",
  o1:"একটি বাড়ি", o2:"একটি ঘর", o3:"অফিস বা স্টুডিও", o4:"ক্যাফে বা রেস্টুরেন্ট",
@@ -851,6 +889,7 @@ function applyLang(){
     : 'Shwash Crystal Lighting, decorative and architectural lighting in Dhaka';
   buildGrid();
   setDim(+dimEl.value);
+  $('#waFloat').href='https://wa.me/8801712562356?text='+encodeURIComponent(tr('wahi'));
 }
 $('#lang').addEventListener('click',function(){ lang = lang==='en'?'bn':'en'; applyLang(); });
 
